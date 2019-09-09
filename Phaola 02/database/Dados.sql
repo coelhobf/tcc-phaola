@@ -9,7 +9,7 @@
     [ESD]           FLOAT (53) NULL,
 	[EST]           FLOAT (53) NULL,
     [Crioscopia]    FLOAT (53) NULL,
-    [PROTEINAS]     FLOAT (53) NULL,
+    [Proteinas]     FLOAT (53) NULL,
     [CCS]           FLOAT (53) NULL,
     [CTB]           FLOAT (53) NULL,
     [SolidosTotais] FLOAT (53) NULL

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet.xsd" xmlns:mstns="http://tempuri.org/DataSet.xsd" xmlns="http://tempuri.org/DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="bdanalisesDataSet" targetNamespace="http://tempuri.org/bdanalisesDataSet.xsd" xmlns:mstns="http://tempuri.org/bdanalisesDataSet.xsd" xmlns="http://tempuri.org/bdanalisesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -144,7 +144,7 @@ SELECT Id, Data, MatGorda, Densidade, Acidez, Lactose, PH, ESD, EST, Crioscopia,
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
+  <xs:element name="bdanalisesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="bdanalisesDataSet" msprop:Generator_UserDSName="bdanalisesDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Dados" msprop:Generator_TableClassName="DadosDataTable" msprop:Generator_TableVarName="tableDados" msprop:Generator_TablePropName="Dados" msprop:Generator_RowDeletingName="DadosRowDeleting" msprop:Generator_RowChangingName="DadosRowChanging" msprop:Generator_RowEvHandlerName="DadosRowChangeEventHandler" msprop:Generator_RowDeletedName="DadosRowDeleted" msprop:Generator_UserTableName="Dados" msprop:Generator_RowChangedName="DadosRowChanged" msprop:Generator_RowEvArgName="DadosRowChangeEvent" msprop:Generator_RowClassName="DadosRow">

@@ -495,7 +495,7 @@
             // 
             // eSTTextBox1
             // 
-            this.eSTTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource1, "ESD", true));
+            this.eSTTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource1, "EST", true));
             this.eSTTextBox1.Location = new System.Drawing.Point(98, 222);
             this.eSTTextBox1.Name = "eSTTextBox1";
             this.eSTTextBox1.Size = new System.Drawing.Size(111, 20);
