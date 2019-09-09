@@ -20,17 +20,17 @@ namespace Phaola_02 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("bdanalisesDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class bdanalisesDataSet1 : global::System.Data.DataSet {
+    public partial class DataSet : global::System.Data.DataSet {
         
-        private TableDataTable tableTable;
+        private DadosDataTable tableDados;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bdanalisesDataSet1() {
+        public DataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Phaola_02 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected bdanalisesDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Phaola_02 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Table"] != null)) {
-                    base.Tables.Add(new TableDataTable(ds.Tables["Table"]));
+                if ((ds.Tables["Dados"] != null)) {
+                    base.Tables.Add(new DadosDataTable(ds.Tables["Dados"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Phaola_02 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TableDataTable Table {
+        public DadosDataTable Dados {
             get {
-                return this.tableTable;
+                return this.tableDados;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Phaola_02 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            bdanalisesDataSet1 cln = ((bdanalisesDataSet1)(base.Clone()));
+            DataSet cln = ((DataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Phaola_02 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Table"] != null)) {
-                    base.Tables.Add(new TableDataTable(ds.Tables["Table"]));
+                if ((ds.Tables["Dados"] != null)) {
+                    base.Tables.Add(new DadosDataTable(ds.Tables["Dados"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Phaola_02 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableTable = ((TableDataTable)(base.Tables["Table"]));
+            this.tableDados = ((DadosDataTable)(base.Tables["Dados"]));
             if ((initTable == true)) {
-                if ((this.tableTable != null)) {
-                    this.tableTable.InitVars();
+                if ((this.tableDados != null)) {
+                    this.tableDados.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Phaola_02 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "bdanalisesDataSet1";
+            this.DataSetName = "DataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/bdanalisesDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableTable = new TableDataTable();
-            base.Tables.Add(this.tableTable);
+            this.tableDados = new DadosDataTable();
+            base.Tables.Add(this.tableDados);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeTable() {
+        private bool ShouldSerializeDados() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Phaola_02 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            bdanalisesDataSet1 ds = new bdanalisesDataSet1();
+            DataSet ds = new DataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,16 @@ namespace Phaola_02 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void TableRowChangeEventHandler(object sender, TableRowChangeEvent e);
+        public delegate void DadosRowChangeEventHandler(object sender, DadosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TableDataTable : global::System.Data.TypedTableBase<TableRow> {
+        public partial class DadosDataTable : global::System.Data.TypedTableBase<DadosRow> {
+            
+            private global::System.Data.DataColumn columnId;
             
             private global::System.Data.DataColumn columnData;
             
@@ -293,6 +295,8 @@ namespace Phaola_02 {
             
             private global::System.Data.DataColumn columnESD;
             
+            private global::System.Data.DataColumn columnEST;
+            
             private global::System.Data.DataColumn columnCrioscopia;
             
             private global::System.Data.DataColumn columnPROTEINAS;
@@ -305,8 +309,8 @@ namespace Phaola_02 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TableDataTable() {
-                this.TableName = "Table";
+            public DadosDataTable() {
+                this.TableName = "Dados";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -314,7 +318,7 @@ namespace Phaola_02 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal TableDataTable(global::System.Data.DataTable table) {
+            internal DadosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -331,9 +335,17 @@ namespace Phaola_02 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected TableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DadosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -394,6 +406,14 @@ namespace Phaola_02 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ESTColumn {
+                get {
+                    return this.columnEST;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn CrioscopiaColumn {
                 get {
                     return this.columnCrioscopia;
@@ -443,35 +463,36 @@ namespace Phaola_02 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TableRow this[int index] {
+            public DadosRow this[int index] {
                 get {
-                    return ((TableRow)(this.Rows[index]));
+                    return ((DadosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event TableRowChangeEventHandler TableRowChanging;
+            public event DadosRowChangeEventHandler DadosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event TableRowChangeEventHandler TableRowChanged;
+            public event DadosRowChangeEventHandler DadosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event TableRowChangeEventHandler TableRowDeleting;
+            public event DadosRowChangeEventHandler DadosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event TableRowChangeEventHandler TableRowDeleted;
+            public event DadosRowChangeEventHandler DadosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddTableRow(TableRow row) {
+            public void AddDadosRow(DadosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TableRow AddTableRow(System.DateTime Data, double MatGorda, double Densidade, double Acidez, double Lactose, double PH, double ESD, double Crioscopia, double PROTEINAS, double CCS, double CTB, double SolidosTotais) {
-                TableRow rowTableRow = ((TableRow)(this.NewRow()));
+            public DadosRow AddDadosRow(string Id, System.DateTime Data, double MatGorda, double Densidade, double Acidez, double Lactose, double PH, double ESD, double EST, double Crioscopia, double PROTEINAS, double CCS, double CTB, double SolidosTotais) {
+                DadosRow rowDadosRow = ((DadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Id,
                         Data,
                         MatGorda,
                         Densidade,
@@ -479,20 +500,28 @@ namespace Phaola_02 {
                         Lactose,
                         PH,
                         ESD,
+                        EST,
                         Crioscopia,
                         PROTEINAS,
                         CCS,
                         CTB,
                         SolidosTotais};
-                rowTableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTableRow);
-                return rowTableRow;
+                rowDadosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDadosRow);
+                return rowDadosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DadosRow FindById(string Id) {
+                return ((DadosRow)(this.Rows.Find(new object[] {
+                            Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TableDataTable cln = ((TableDataTable)(base.Clone()));
+                DadosDataTable cln = ((DadosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -500,12 +529,13 @@ namespace Phaola_02 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TableDataTable();
+                return new DadosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnId = base.Columns["Id"];
                 this.columnData = base.Columns["Data"];
                 this.columnMatGorda = base.Columns["MatGorda"];
                 this.columnDensidade = base.Columns["Densidade"];
@@ -513,6 +543,7 @@ namespace Phaola_02 {
                 this.columnLactose = base.Columns["Lactose"];
                 this.columnPH = base.Columns["PH"];
                 this.columnESD = base.Columns["ESD"];
+                this.columnEST = base.Columns["EST"];
                 this.columnCrioscopia = base.Columns["Crioscopia"];
                 this.columnPROTEINAS = base.Columns["PROTEINAS"];
                 this.columnCCS = base.Columns["CCS"];
@@ -523,6 +554,8 @@ namespace Phaola_02 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
                 this.columnData = new global::System.Data.DataColumn("Data", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnData);
                 this.columnMatGorda = new global::System.Data.DataColumn("MatGorda", typeof(double), null, global::System.Data.MappingType.Element);
@@ -537,6 +570,8 @@ namespace Phaola_02 {
                 base.Columns.Add(this.columnPH);
                 this.columnESD = new global::System.Data.DataColumn("ESD", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnESD);
+                this.columnEST = new global::System.Data.DataColumn("EST", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEST);
                 this.columnCrioscopia = new global::System.Data.DataColumn("Crioscopia", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCrioscopia);
                 this.columnPROTEINAS = new global::System.Data.DataColumn("PROTEINAS", typeof(double), null, global::System.Data.MappingType.Element);
@@ -547,40 +582,38 @@ namespace Phaola_02 {
                 base.Columns.Add(this.columnCTB);
                 this.columnSolidosTotais = new global::System.Data.DataColumn("SolidosTotais", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSolidosTotais);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId}, true));
+                this.columnId.AllowDBNull = false;
+                this.columnId.Unique = true;
+                this.columnId.MaxLength = 8;
                 this.columnData.AllowDBNull = false;
-                this.ExtendedProperties.Add("Generator_RowClassName", "TableRow");
-                this.ExtendedProperties.Add("Generator_RowEvArgName", "TableRowChangeEvent");
-                this.ExtendedProperties.Add("Generator_RowEvHandlerName", "TableRowChangeEventHandler");
-                this.ExtendedProperties.Add("Generator_TableClassName", "TableDataTable");
-                this.ExtendedProperties.Add("Generator_TablePropName", "Table");
-                this.ExtendedProperties.Add("Generator_TableVarName", "tableTable");
-                this.ExtendedProperties.Add("Generator_UserTableName", "Table");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TableRow NewTableRow() {
-                return ((TableRow)(this.NewRow()));
+            public DadosRow NewDadosRow() {
+                return ((DadosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TableRow(builder);
+                return new DadosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TableRow);
+                return typeof(DadosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TableRowChanged != null)) {
-                    this.TableRowChanged(this, new TableRowChangeEvent(((TableRow)(e.Row)), e.Action));
+                if ((this.DadosRowChanged != null)) {
+                    this.DadosRowChanged(this, new DadosRowChangeEvent(((DadosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -588,8 +621,8 @@ namespace Phaola_02 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TableRowChanging != null)) {
-                    this.TableRowChanging(this, new TableRowChangeEvent(((TableRow)(e.Row)), e.Action));
+                if ((this.DadosRowChanging != null)) {
+                    this.DadosRowChanging(this, new DadosRowChangeEvent(((DadosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -597,8 +630,8 @@ namespace Phaola_02 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TableRowDeleted != null)) {
-                    this.TableRowDeleted(this, new TableRowChangeEvent(((TableRow)(e.Row)), e.Action));
+                if ((this.DadosRowDeleted != null)) {
+                    this.DadosRowDeleted(this, new DadosRowChangeEvent(((DadosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -606,14 +639,14 @@ namespace Phaola_02 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TableRowDeleting != null)) {
-                    this.TableRowDeleting(this, new TableRowChangeEvent(((TableRow)(e.Row)), e.Action));
+                if ((this.DadosRowDeleting != null)) {
+                    this.DadosRowDeleting(this, new DadosRowChangeEvent(((DadosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveTableRow(TableRow row) {
+            public void RemoveDadosRow(DadosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -622,7 +655,7 @@ namespace Phaola_02 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                bdanalisesDataSet1 ds = new bdanalisesDataSet1();
+                DataSet ds = new DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -640,7 +673,7 @@ namespace Phaola_02 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TableDataTable";
+                attribute2.FixedValue = "DadosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -684,25 +717,36 @@ namespace Phaola_02 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TableRow : global::System.Data.DataRow {
+        public partial class DadosRow : global::System.Data.DataRow {
             
-            private TableDataTable tableTable;
+            private DadosDataTable tableDados;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal TableRow(global::System.Data.DataRowBuilder rb) : 
+            internal DadosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTable = ((TableDataTable)(this.Table));
+                this.tableDados = ((DadosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Id {
+                get {
+                    return ((string)(this[this.tableDados.IdColumn]));
+                }
+                set {
+                    this[this.tableDados.IdColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime Data {
                 get {
-                    return ((global::System.DateTime)(this[this.tableTable.DataColumn]));
+                    return ((global::System.DateTime)(this[this.tableDados.DataColumn]));
                 }
                 set {
-                    this[this.tableTable.DataColumn] = value;
+                    this[this.tableDados.DataColumn] = value;
                 }
             }
             
@@ -711,14 +755,14 @@ namespace Phaola_02 {
             public double MatGorda {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.MatGordaColumn]));
+                        return ((double)(this[this.tableDados.MatGordaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'MatGorda\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'MatGorda\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.MatGordaColumn] = value;
+                    this[this.tableDados.MatGordaColumn] = value;
                 }
             }
             
@@ -727,14 +771,14 @@ namespace Phaola_02 {
             public double Densidade {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.DensidadeColumn]));
+                        return ((double)(this[this.tableDados.DensidadeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Densidade\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Densidade\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.DensidadeColumn] = value;
+                    this[this.tableDados.DensidadeColumn] = value;
                 }
             }
             
@@ -743,14 +787,14 @@ namespace Phaola_02 {
             public double Acidez {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.AcidezColumn]));
+                        return ((double)(this[this.tableDados.AcidezColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Acidez\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Acidez\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.AcidezColumn] = value;
+                    this[this.tableDados.AcidezColumn] = value;
                 }
             }
             
@@ -759,14 +803,14 @@ namespace Phaola_02 {
             public double Lactose {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.LactoseColumn]));
+                        return ((double)(this[this.tableDados.LactoseColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Lactose\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Lactose\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.LactoseColumn] = value;
+                    this[this.tableDados.LactoseColumn] = value;
                 }
             }
             
@@ -775,14 +819,14 @@ namespace Phaola_02 {
             public double PH {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.PHColumn]));
+                        return ((double)(this[this.tableDados.PHColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'PH\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'PH\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.PHColumn] = value;
+                    this[this.tableDados.PHColumn] = value;
                 }
             }
             
@@ -791,14 +835,30 @@ namespace Phaola_02 {
             public double ESD {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.ESDColumn]));
+                        return ((double)(this[this.tableDados.ESDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ESD\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ESD\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.ESDColumn] = value;
+                    this[this.tableDados.ESDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double EST {
+                get {
+                    try {
+                        return ((double)(this[this.tableDados.ESTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'EST\' na tabela \'Dados\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDados.ESTColumn] = value;
                 }
             }
             
@@ -807,14 +867,14 @@ namespace Phaola_02 {
             public double Crioscopia {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.CrioscopiaColumn]));
+                        return ((double)(this[this.tableDados.CrioscopiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Crioscopia\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Crioscopia\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.CrioscopiaColumn] = value;
+                    this[this.tableDados.CrioscopiaColumn] = value;
                 }
             }
             
@@ -823,14 +883,14 @@ namespace Phaola_02 {
             public double PROTEINAS {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.PROTEINASColumn]));
+                        return ((double)(this[this.tableDados.PROTEINASColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'PROTEINAS\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'PROTEINAS\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.PROTEINASColumn] = value;
+                    this[this.tableDados.PROTEINASColumn] = value;
                 }
             }
             
@@ -839,14 +899,14 @@ namespace Phaola_02 {
             public double CCS {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.CCSColumn]));
+                        return ((double)(this[this.tableDados.CCSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CCS\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CCS\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.CCSColumn] = value;
+                    this[this.tableDados.CCSColumn] = value;
                 }
             }
             
@@ -855,14 +915,14 @@ namespace Phaola_02 {
             public double CTB {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.CTBColumn]));
+                        return ((double)(this[this.tableDados.CTBColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CTB\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CTB\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.CTBColumn] = value;
+                    this[this.tableDados.CTBColumn] = value;
                 }
             }
             
@@ -871,147 +931,159 @@ namespace Phaola_02 {
             public double SolidosTotais {
                 get {
                     try {
-                        return ((double)(this[this.tableTable.SolidosTotaisColumn]));
+                        return ((double)(this[this.tableDados.SolidosTotaisColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'SolidosTotais\' na tabela \'Table\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'SolidosTotais\' na tabela \'Dados\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTable.SolidosTotaisColumn] = value;
+                    this[this.tableDados.SolidosTotaisColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsMatGordaNull() {
-                return this.IsNull(this.tableTable.MatGordaColumn);
+                return this.IsNull(this.tableDados.MatGordaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetMatGordaNull() {
-                this[this.tableTable.MatGordaColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.MatGordaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDensidadeNull() {
-                return this.IsNull(this.tableTable.DensidadeColumn);
+                return this.IsNull(this.tableDados.DensidadeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDensidadeNull() {
-                this[this.tableTable.DensidadeColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.DensidadeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsAcidezNull() {
-                return this.IsNull(this.tableTable.AcidezColumn);
+                return this.IsNull(this.tableDados.AcidezColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAcidezNull() {
-                this[this.tableTable.AcidezColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.AcidezColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsLactoseNull() {
-                return this.IsNull(this.tableTable.LactoseColumn);
+                return this.IsNull(this.tableDados.LactoseColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetLactoseNull() {
-                this[this.tableTable.LactoseColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.LactoseColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsPHNull() {
-                return this.IsNull(this.tableTable.PHColumn);
+                return this.IsNull(this.tableDados.PHColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPHNull() {
-                this[this.tableTable.PHColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.PHColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsESDNull() {
-                return this.IsNull(this.tableTable.ESDColumn);
+                return this.IsNull(this.tableDados.ESDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetESDNull() {
-                this[this.tableTable.ESDColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.ESDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsESTNull() {
+                return this.IsNull(this.tableDados.ESTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetESTNull() {
+                this[this.tableDados.ESTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCrioscopiaNull() {
-                return this.IsNull(this.tableTable.CrioscopiaColumn);
+                return this.IsNull(this.tableDados.CrioscopiaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCrioscopiaNull() {
-                this[this.tableTable.CrioscopiaColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.CrioscopiaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsPROTEINASNull() {
-                return this.IsNull(this.tableTable.PROTEINASColumn);
+                return this.IsNull(this.tableDados.PROTEINASColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPROTEINASNull() {
-                this[this.tableTable.PROTEINASColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.PROTEINASColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCCSNull() {
-                return this.IsNull(this.tableTable.CCSColumn);
+                return this.IsNull(this.tableDados.CCSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCCSNull() {
-                this[this.tableTable.CCSColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.CCSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCTBNull() {
-                return this.IsNull(this.tableTable.CTBColumn);
+                return this.IsNull(this.tableDados.CTBColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCTBNull() {
-                this[this.tableTable.CTBColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.CTBColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSolidosTotaisNull() {
-                return this.IsNull(this.tableTable.SolidosTotaisColumn);
+                return this.IsNull(this.tableDados.SolidosTotaisColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSolidosTotaisNull() {
-                this[this.tableTable.SolidosTotaisColumn] = global::System.Convert.DBNull;
+                this[this.tableDados.SolidosTotaisColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1019,22 +1091,22 @@ namespace Phaola_02 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class TableRowChangeEvent : global::System.EventArgs {
+        public class DadosRowChangeEvent : global::System.EventArgs {
             
-            private TableRow eventRow;
+            private DadosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TableRowChangeEvent(TableRow row, global::System.Data.DataRowAction action) {
+            public DadosRowChangeEvent(DadosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TableRow Row {
+            public DadosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1050,7 +1122,7 @@ namespace Phaola_02 {
         }
     }
 }
-namespace Phaola_02.bdanalisesDataSet1TableAdapters {
+namespace Phaola_02.DataSetTableAdapters {
     
     
     /// <summary>
@@ -1062,7 +1134,7 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TableTableAdapter : global::System.ComponentModel.Component {
+    public partial class DadosTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1076,7 +1148,7 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public TableTableAdapter() {
+        public DadosTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1173,7 +1245,8 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Table";
+            tableMapping.DataSetTable = "Dados";
+            tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Data", "Data");
             tableMapping.ColumnMappings.Add("MatGorda", "MatGorda");
             tableMapping.ColumnMappings.Add("Densidade", "Densidade");
@@ -1181,16 +1254,49 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Lactose", "Lactose");
             tableMapping.ColumnMappings.Add("PH", "PH");
             tableMapping.ColumnMappings.Add("ESD", "ESD");
+            tableMapping.ColumnMappings.Add("EST", "EST");
             tableMapping.ColumnMappings.Add("Crioscopia", "Crioscopia");
             tableMapping.ColumnMappings.Add("PROTEINAS", "PROTEINAS");
             tableMapping.ColumnMappings.Add("CCS", "CCS");
             tableMapping.ColumnMappings.Add("CTB", "CTB");
             tableMapping.ColumnMappings.Add("SolidosTotais", "SolidosTotais");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Dados] WHERE (([Id] = @Original_Id) AND ([Data] = @Original_Data) AND ((@IsNull_MatGorda = 1 AND [MatGorda] IS NULL) OR ([MatGorda] = @Original_MatGorda)) AND ((@IsNull_Densidade = 1 AND [Densidade] IS NULL) OR ([Densidade] = @Original_Densidade)) AND ((@IsNull_Acidez = 1 AND [Acidez] IS NULL) OR ([Acidez] = @Original_Acidez)) AND ((@IsNull_Lactose = 1 AND [Lactose] IS NULL) OR ([Lactose] = @Original_Lactose)) AND ((@IsNull_PH = 1 AND [PH] IS NULL) OR ([PH] = @Original_PH)) AND ((@IsNull_ESD = 1 AND [ESD] IS NULL) OR ([ESD] = @Original_ESD)) AND ((@IsNull_EST = 1 AND [EST] IS NULL) OR ([EST] = @Original_EST)) AND ((@IsNull_Crioscopia = 1 AND [Crioscopia] IS NULL) OR ([Crioscopia] = @Original_Crioscopia)) AND ((@IsNull_PROTEINAS = 1 AND [PROTEINAS] IS NULL) OR ([PROTEINAS] = @Original_PROTEINAS)) AND ((@IsNull_CCS = 1 AND [CCS] IS NULL) OR ([CCS] = @Original_CCS)) AND ((@IsNull_CTB = 1 AND [CTB] IS NULL) OR ([CTB] = @Original_CTB)) AND ((@IsNull_SolidosTotais = 1 AND [SolidosTotais] IS NULL) OR ([SolidosTotais] = @Original_SolidosTotais)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MatGorda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MatGorda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MatGorda", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MatGorda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Densidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Densidade", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Densidade", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Densidade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Acidez", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acidez", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Acidez", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acidez", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Lactose", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lactose", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lactose", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lactose", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PH", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESD", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EST", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Crioscopia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Crioscopia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Crioscopia", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Crioscopia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PROTEINAS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROTEINAS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PROTEINAS", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROTEINAS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CCS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CCS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CCS", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CCS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CTB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CTB", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CTB", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CTB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SolidosTotais", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SolidosTotais", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SolidosTotais", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SolidosTotais", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Table] ([Data], [MatGorda], [Densidade], [Acidez], [Lactose], [PH], [ESD], [Crioscopia], [PROTEINAS], [CCS], [CTB], [SolidosTotais]) VALUES (@Data, @MatGorda, @Densidade, @Acidez, @Lactose, @PH, @ESD, @Crioscopia, @PROTEINAS, @CCS, @CTB, @SolidosTotais)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Dados] ([Id], [Data], [MatGorda], [Densidade], [Acidez], [Lactose], [PH], [ESD], [EST], [Crioscopia], [PROTEINAS], [CCS], [CTB], [SolidosTotais]) VALUES (@Id, @Data, @MatGorda, @Densidade, @Acidez, @Lactose, @PH, @ESD, @EST, @Crioscopia, @PROTEINAS, @CCS, @CTB, @SolidosTotais);
+SELECT Id, Data, MatGorda, Densidade, Acidez, Lactose, PH, ESD, EST, Crioscopia, PROTEINAS, CCS, CTB, SolidosTotais FROM Dados WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MatGorda", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MatGorda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Densidade", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Densidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1198,11 +1304,57 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lactose", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lactose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PH", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESD", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EST", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Crioscopia", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Crioscopia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROTEINAS", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROTEINAS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CCS", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CCS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CTB", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CTB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SolidosTotais", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SolidosTotais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Dados] SET [Id] = @Id, [Data] = @Data, [MatGorda] = @MatGorda, [Densidade] = @Densidade, [Acidez] = @Acidez, [Lactose] = @Lactose, [PH] = @PH, [ESD] = @ESD, [EST] = @EST, [Crioscopia] = @Crioscopia, [PROTEINAS] = @PROTEINAS, [CCS] = @CCS, [CTB] = @CTB, [SolidosTotais] = @SolidosTotais WHERE (([Id] = @Original_Id) AND ([Data] = @Original_Data) AND ((@IsNull_MatGorda = 1 AND [MatGorda] IS NULL) OR ([MatGorda] = @Original_MatGorda)) AND ((@IsNull_Densidade = 1 AND [Densidade] IS NULL) OR ([Densidade] = @Original_Densidade)) AND ((@IsNull_Acidez = 1 AND [Acidez] IS NULL) OR ([Acidez] = @Original_Acidez)) AND ((@IsNull_Lactose = 1 AND [Lactose] IS NULL) OR ([Lactose] = @Original_Lactose)) AND ((@IsNull_PH = 1 AND [PH] IS NULL) OR ([PH] = @Original_PH)) AND ((@IsNull_ESD = 1 AND [ESD] IS NULL) OR ([ESD] = @Original_ESD)) AND ((@IsNull_EST = 1 AND [EST] IS NULL) OR ([EST] = @Original_EST)) AND ((@IsNull_Crioscopia = 1 AND [Crioscopia] IS NULL) OR ([Crioscopia] = @Original_Crioscopia)) AND ((@IsNull_PROTEINAS = 1 AND [PROTEINAS] IS NULL) OR ([PROTEINAS] = @Original_PROTEINAS)) AND ((@IsNull_CCS = 1 AND [CCS] IS NULL) OR ([CCS] = @Original_CCS)) AND ((@IsNull_CTB = 1 AND [CTB] IS NULL) OR ([CTB] = @Original_CTB)) AND ((@IsNull_SolidosTotais = 1 AND [SolidosTotais] IS NULL) OR ([SolidosTotais] = @Original_SolidosTotais)));
+SELECT Id, Data, MatGorda, Densidade, Acidez, Lactose, PH, ESD, EST, Crioscopia, PROTEINAS, CCS, CTB, SolidosTotais FROM Dados WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MatGorda", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MatGorda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Densidade", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Densidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Acidez", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acidez", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lactose", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lactose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PH", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESD", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EST", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Crioscopia", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Crioscopia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROTEINAS", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROTEINAS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CCS", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CCS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CTB", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CTB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SolidosTotais", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SolidosTotais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MatGorda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MatGorda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MatGorda", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MatGorda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Densidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Densidade", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Densidade", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Densidade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Acidez", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acidez", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Acidez", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acidez", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Lactose", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lactose", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lactose", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lactose", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PH", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESD", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EST", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Crioscopia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Crioscopia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Crioscopia", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Crioscopia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PROTEINAS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROTEINAS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PROTEINAS", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROTEINAS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CCS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CCS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CCS", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CCS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CTB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CTB", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CTB", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CTB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SolidosTotais", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SolidosTotais", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SolidosTotais", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SolidosTotais", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1218,8 +1370,8 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Data, MatGorda, Densidade, Acidez, Lactose, PH, ESD, Crioscopia, PROTEINAS" +
-                ", CCS, CTB, SolidosTotais FROM dbo.[Table]";
+            this._commandCollection[0].CommandText = "SELECT Id, Data, MatGorda, Densidade, Acidez, Lactose, PH, ESD, EST, Crioscopia, " +
+                "PROTEINAS, CCS, CTB, SolidosTotais FROM dbo.Dados";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1227,7 +1379,7 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(bdanalisesDataSet1.TableDataTable dataTable) {
+        public virtual int Fill(DataSet.DadosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1240,9 +1392,9 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual bdanalisesDataSet1.TableDataTable GetData() {
+        public virtual DataSet.DadosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            bdanalisesDataSet1.TableDataTable dataTable = new bdanalisesDataSet1.TableDataTable();
+            DataSet.DadosDataTable dataTable = new DataSet.DadosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1250,15 +1402,15 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bdanalisesDataSet1.TableDataTable dataTable) {
+        public virtual int Update(DataSet.DadosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(bdanalisesDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Table");
+        public virtual int Update(DataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Dados");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1279,74 +1431,210 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime Data, global::System.Nullable<double> MatGorda, global::System.Nullable<double> Densidade, global::System.Nullable<double> Acidez, global::System.Nullable<double> Lactose, global::System.Nullable<double> PH, global::System.Nullable<double> ESD, global::System.Nullable<double> Crioscopia, global::System.Nullable<double> PROTEINAS, global::System.Nullable<double> CCS, global::System.Nullable<double> CTB, global::System.Nullable<double> SolidosTotais) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Data));
-            if ((MatGorda.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((double)(MatGorda.Value));
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_Id, System.DateTime Original_Data, global::System.Nullable<double> Original_MatGorda, global::System.Nullable<double> Original_Densidade, global::System.Nullable<double> Original_Acidez, global::System.Nullable<double> Original_Lactose, global::System.Nullable<double> Original_PH, global::System.Nullable<double> Original_ESD, global::System.Nullable<double> Original_EST, global::System.Nullable<double> Original_Crioscopia, global::System.Nullable<double> Original_PROTEINAS, global::System.Nullable<double> Original_CCS, global::System.Nullable<double> Original_CTB, global::System.Nullable<double> Original_SolidosTotais) {
+            if ((Original_Id == null)) {
+                throw new global::System.ArgumentNullException("Original_Id");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Id));
             }
-            if ((Densidade.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(Densidade.Value));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_Data));
+            if ((Original_MatGorda.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((double)(Original_MatGorda.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Densidade.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_Densidade.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Acidez.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((double)(Original_Acidez.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Lactose.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((double)(Original_Lactose.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PH.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((double)(Original_PH.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ESD.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((double)(Original_ESD.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EST.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((double)(Original_EST.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Crioscopia.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((double)(Original_Crioscopia.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PROTEINAS.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((double)(Original_PROTEINAS.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CCS.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((double)(Original_CCS.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CTB.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((double)(Original_CTB.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SolidosTotais.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((double)(Original_SolidosTotais.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string Id, System.DateTime Data, global::System.Nullable<double> MatGorda, global::System.Nullable<double> Densidade, global::System.Nullable<double> Acidez, global::System.Nullable<double> Lactose, global::System.Nullable<double> PH, global::System.Nullable<double> ESD, global::System.Nullable<double> EST, global::System.Nullable<double> Crioscopia, global::System.Nullable<double> PROTEINAS, global::System.Nullable<double> CCS, global::System.Nullable<double> CTB, global::System.Nullable<double> SolidosTotais) {
+            if ((Id == null)) {
+                throw new global::System.ArgumentNullException("Id");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Id));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Data));
+            if ((MatGorda.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(MatGorda.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Acidez.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Acidez.Value));
+            if ((Densidade.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Densidade.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Lactose.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(Lactose.Value));
+            if ((Acidez.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(Acidez.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((PH.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(PH.Value));
+            if ((Lactose.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Lactose.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((ESD.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((double)(ESD.Value));
+            if ((PH.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((double)(PH.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Crioscopia.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(Crioscopia.Value));
+            if ((ESD.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(ESD.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((PROTEINAS.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(PROTEINAS.Value));
+            if ((EST.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(EST.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((CCS.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(CCS.Value));
+            if ((Crioscopia.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(Crioscopia.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((CTB.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(CTB.Value));
+            if ((PROTEINAS.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(PROTEINAS.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((SolidosTotais.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(SolidosTotais.Value));
+            if ((CCS.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(CCS.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((CTB.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(CTB.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((SolidosTotais.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(SolidosTotais.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1363,6 +1651,272 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
                 }
             }
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string Id, 
+                    System.DateTime Data, 
+                    global::System.Nullable<double> MatGorda, 
+                    global::System.Nullable<double> Densidade, 
+                    global::System.Nullable<double> Acidez, 
+                    global::System.Nullable<double> Lactose, 
+                    global::System.Nullable<double> PH, 
+                    global::System.Nullable<double> ESD, 
+                    global::System.Nullable<double> EST, 
+                    global::System.Nullable<double> Crioscopia, 
+                    global::System.Nullable<double> PROTEINAS, 
+                    global::System.Nullable<double> CCS, 
+                    global::System.Nullable<double> CTB, 
+                    global::System.Nullable<double> SolidosTotais, 
+                    string Original_Id, 
+                    System.DateTime Original_Data, 
+                    global::System.Nullable<double> Original_MatGorda, 
+                    global::System.Nullable<double> Original_Densidade, 
+                    global::System.Nullable<double> Original_Acidez, 
+                    global::System.Nullable<double> Original_Lactose, 
+                    global::System.Nullable<double> Original_PH, 
+                    global::System.Nullable<double> Original_ESD, 
+                    global::System.Nullable<double> Original_EST, 
+                    global::System.Nullable<double> Original_Crioscopia, 
+                    global::System.Nullable<double> Original_PROTEINAS, 
+                    global::System.Nullable<double> Original_CCS, 
+                    global::System.Nullable<double> Original_CTB, 
+                    global::System.Nullable<double> Original_SolidosTotais) {
+            if ((Id == null)) {
+                throw new global::System.ArgumentNullException("Id");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Id));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Data));
+            if ((MatGorda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(MatGorda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Densidade.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(Densidade.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Acidez.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(Acidez.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Lactose.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Lactose.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((PH.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(PH.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((ESD.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(ESD.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((EST.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(EST.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Crioscopia.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Crioscopia.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((PROTEINAS.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(PROTEINAS.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((CCS.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(CCS.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((CTB.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(CTB.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((SolidosTotais.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(SolidosTotais.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Id == null)) {
+                throw new global::System.ArgumentNullException("Original_Id");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Id));
+            }
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Data));
+            if ((Original_MatGorda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Original_MatGorda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Densidade.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(Original_Densidade.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Acidez.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(Original_Acidez.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Lactose.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((double)(Original_Lactose.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PH.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(Original_PH.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ESD.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((double)(Original_ESD.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EST.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((double)(Original_EST.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Crioscopia.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((double)(Original_Crioscopia.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PROTEINAS.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((double)(Original_PROTEINAS.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CCS.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((double)(Original_CCS.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CTB.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((double)(Original_CTB.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SolidosTotais.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((double)(Original_SolidosTotais.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    System.DateTime Data, 
+                    global::System.Nullable<double> MatGorda, 
+                    global::System.Nullable<double> Densidade, 
+                    global::System.Nullable<double> Acidez, 
+                    global::System.Nullable<double> Lactose, 
+                    global::System.Nullable<double> PH, 
+                    global::System.Nullable<double> ESD, 
+                    global::System.Nullable<double> EST, 
+                    global::System.Nullable<double> Crioscopia, 
+                    global::System.Nullable<double> PROTEINAS, 
+                    global::System.Nullable<double> CCS, 
+                    global::System.Nullable<double> CTB, 
+                    global::System.Nullable<double> SolidosTotais, 
+                    string Original_Id, 
+                    System.DateTime Original_Data, 
+                    global::System.Nullable<double> Original_MatGorda, 
+                    global::System.Nullable<double> Original_Densidade, 
+                    global::System.Nullable<double> Original_Acidez, 
+                    global::System.Nullable<double> Original_Lactose, 
+                    global::System.Nullable<double> Original_PH, 
+                    global::System.Nullable<double> Original_ESD, 
+                    global::System.Nullable<double> Original_EST, 
+                    global::System.Nullable<double> Original_Crioscopia, 
+                    global::System.Nullable<double> Original_PROTEINAS, 
+                    global::System.Nullable<double> Original_CCS, 
+                    global::System.Nullable<double> Original_CTB, 
+                    global::System.Nullable<double> Original_SolidosTotais) {
+            return this.Update(Original_Id, Data, MatGorda, Densidade, Acidez, Lactose, PH, ESD, EST, Crioscopia, PROTEINAS, CCS, CTB, SolidosTotais, Original_Id, Original_Data, Original_MatGorda, Original_Densidade, Original_Acidez, Original_Lactose, Original_PH, Original_ESD, Original_EST, Original_Crioscopia, Original_PROTEINAS, Original_CCS, Original_CTB, Original_SolidosTotais);
+        }
     }
     
     /// <summary>
@@ -1377,7 +1931,7 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private TableTableAdapter _tableTableAdapter;
+        private DadosTableAdapter _dadosTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1399,12 +1953,12 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public TableTableAdapter TableTableAdapter {
+        public DadosTableAdapter DadosTableAdapter {
             get {
-                return this._tableTableAdapter;
+                return this._dadosTableAdapter;
             }
             set {
-                this._tableTableAdapter = value;
+                this._dadosTableAdapter = value;
             }
         }
         
@@ -1427,9 +1981,9 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._tableTableAdapter != null) 
-                            && (this._tableTableAdapter.Connection != null))) {
-                    return this._tableTableAdapter.Connection;
+                if (((this._dadosTableAdapter != null) 
+                            && (this._dadosTableAdapter.Connection != null))) {
+                    return this._dadosTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1444,7 +1998,7 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._tableTableAdapter != null)) {
+                if ((this._dadosTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1456,14 +2010,14 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(bdanalisesDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tableTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._dadosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Dados.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tableTableAdapter.Update(updatedRows));
+                    result = (result + this._dadosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1475,13 +2029,13 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(bdanalisesDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tableTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._dadosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Dados.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tableTableAdapter.Update(addedRows));
+                    result = (result + this._dadosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1493,13 +2047,13 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(bdanalisesDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._tableTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Table.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._dadosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Dados.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tableTableAdapter.Update(deletedRows));
+                    result = (result + this._dadosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1535,15 +2089,15 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(bdanalisesDataSet1 dataSet) {
+        public virtual int UpdateAll(DataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._tableTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tableTableAdapter.Connection) == false))) {
+            if (((this._dadosTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._dadosTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
@@ -1579,13 +2133,13 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._tableTableAdapter != null)) {
-                    revertConnections.Add(this._tableTableAdapter, this._tableTableAdapter.Connection);
-                    this._tableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tableTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tableTableAdapter.Adapter);
+                if ((this._dadosTableAdapter != null)) {
+                    revertConnections.Add(this._dadosTableAdapter, this._dadosTableAdapter.Connection);
+                    this._dadosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._dadosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._dadosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._dadosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._dadosTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1646,9 +2200,9 @@ namespace Phaola_02.bdanalisesDataSet1TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._tableTableAdapter != null)) {
-                    this._tableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tableTableAdapter]));
-                    this._tableTableAdapter.Transaction = null;
+                if ((this._dadosTableAdapter != null)) {
+                    this._dadosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dadosTableAdapter]));
+                    this._dadosTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

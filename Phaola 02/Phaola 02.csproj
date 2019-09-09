@@ -71,37 +71,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bdanalisesDataSet.cs">
-      <DependentUpon>bdanalisesDataSet.xsd</DependentUpon>
+    <Compile Include="DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="bdanalisesDataSet.Designer.cs">
+    <Compile Include="DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bdanalisesDataSet.xsd</DependentUpon>
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="bdanalisesDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bdanalisesDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Principal.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Painel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Painel.Designer.cs">
-      <DependentUpon>Painel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -113,27 +102,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="bdanalisesDataSet.xsc">
-      <DependentUpon>bdanalisesDataSet.xsd</DependentUpon>
+    <None Include="DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="bdanalisesDataSet.xsd">
+    <None Include="DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bdanalisesDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="bdanalisesDataSet.xss">
-      <DependentUpon>bdanalisesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="bdanalisesDataSet1.xsc">
-      <DependentUpon>bdanalisesDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="bdanalisesDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bdanalisesDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bdanalisesDataSet1.xss">
-      <DependentUpon>bdanalisesDataSet1.xsd</DependentUpon>
+    <None Include="DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Phaola_02
 {
-    public partial class Form1 : Form
+    public partial class Principal : Form
     {
         private (double min, double max) materiaGorda_padrao;
         private (double min, double max) densidade_padrao = (1.028, 1.34);
@@ -31,17 +31,13 @@ namespace Phaola_02
         private double ctb_amostra;
         private double solidostotais_amostra;
 
-        public Form1()
+        public Principal()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'bdanalisesDataSet1.Table'. Você pode movê-la ou removê-la conforme necessário.
-            this.tableTableAdapter1.Fill(this.bdanalisesDataSet1.Table);
-            // TODO: esta linha de código carrega dados na tabela 'bdanalisesDataSet.Table'. Você pode movê-la ou removê-la conforme necessário.
-            this.tableTableAdapter.Fill(this.bdanalisesDataSet.Table);
 
         }
 
@@ -353,10 +349,5 @@ namespace Phaola_02
 
 
         #endregion
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
