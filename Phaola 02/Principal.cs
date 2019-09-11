@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Phaola_02.Dados;
+using System;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -31,6 +32,7 @@ namespace Phaola_02
         private double ccs_amostra;
         private double ctb_amostra;
         private double solidostotais_amostra;
+        private DateTime dataAnalise;
 
         public Principal()
         {
@@ -149,52 +151,54 @@ namespace Phaola_02
             }
 
             // Salva os dados no banco
-            var data = DateTime.Now;
+            var data = dataAnalise;
             string id = data.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            //using (var contexto = new bdAnalisesEntities())
-            //{
-            //    var analise = new Dados();
+            using (var contexto = new AnaliseContext())
+            {
+                var analise = new Analise();
 
-            //    analise.Id = id;
-            //    analise.Data = DateTime.Now;
-            //    analise.Proteinas = proteinas_amostra;
-            //    analise.MatGorda = materiaGorda_amostra;
-            //    analise.Densidade = densidade_amostra;
-            //    analise.Acidez = acidez_amostra;
-            //    analise.Lactose = lactose_amostra;
-            //    analise.PH = ph_amostra;
-            //    analise.ESD = esd_amostra;
-            //    analise.EST = est_amostra;
-            //    analise.Crioscopia = crioscopia_amostra;
-            //    analise.CCS = ccs_amostra;
-            //    analise.CTB = ctb_amostra;
-            //    analise.SolidosTotais = solidostotais_amostra;
+                analise.Id = id;
+                analise.Data = dataAnalise;
+                analise.Proteinas = proteinas_amostra;
+                analise.MatGorda = materiaGorda_amostra;
+                analise.Densidade = densidade_amostra;
+                analise.Acidez = acidez_amostra;
+                analise.Lactose = lactose_amostra;
+                analise.PH = ph_amostra;
+                analise.ESD = esd_amostra;
+                analise.EST = est_amostra;
+                analise.Crioscopia = crioscopia_amostra;
+                analise.CCS = ccs_amostra;
+                analise.CTB = ctb_amostra;
+                analise.SolidosTotais = solidostotais_amostra;
 
-            //    contexto.Dados.Add(analise);
+                contexto.Analises.Add(analise);
+                contexto.SaveChanges();
+                MessageBox.Show("Dados Salvos com sucesso!");
 
-            //    try
-            //    {
-            //        contexto.SaveChanges();
-            //    }
-            //    catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-            //    {
-            //        Exception raise = dbEx;
-            //        foreach (var validationErrors in dbEx.EntityValidationErrors)
-            //        {
-            //            foreach (var validationError in validationErrors.ValidationErrors)
-            //            {
-            //                string message = string.Format("{0}:{1}",
-            //                    validationErrors.Entry.Entity.ToString(),
-            //                    validationError.ErrorMessage);
-            //                // raise a new exception nesting
-            //                // the current instance as InnerException
-            //                raise = new InvalidOperationException(message, raise);
-            //            }
-            //        }
-            //        throw raise;
-            //    }
-            //}
+                try
+                {
+                    //MessageBox.Show("Salvou ok");
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
+            }
 
         }
 
@@ -206,7 +210,7 @@ namespace Phaola_02
             double num;
             if (Double.TryParse(s.Text, out num))
             {
-                materiaGorda_amostra= num;
+                materiaGorda_amostra = num;
             }
             else
             {
@@ -391,7 +395,18 @@ namespace Phaola_02
             }
         }
 
+        private void dataDateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            var s = (DateTimePicker)sender;
 
+            DateTime date;
+            if (!DateTime.TryParse(s.Text, out date))
+            {
+                date = DateTime.Now;
+            }
+
+            dataAnalise = date;
+        }
 
         #endregion
 

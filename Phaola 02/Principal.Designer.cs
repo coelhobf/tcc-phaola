@@ -225,6 +225,7 @@
             this.dataDateTimePicker1.Name = "dataDateTimePicker1";
             this.dataDateTimePicker1.Size = new System.Drawing.Size(286, 20);
             this.dataDateTimePicker1.TabIndex = 2;
+            this.dataDateTimePicker1.ValueChanged += new System.EventHandler(this.dataDateTimePicker1_ValueChanged);
             // 
             // densidadeTextBox1
             // 
