@@ -152,7 +152,27 @@ namespace Phaola_02
             var data = DateTime.Now;
             string id = data.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            
+            using (var contexto = new bdanalisesEntities())
+            {
+                var analise = new Dados();
+
+                analise.Id = id;
+                analise.Proteinas = proteinas_amostra;
+                analise.MatGorda = materiaGorda_amostra;
+                analise.Densidade = densidade_amostra;
+                analise.Acidez = acidez_amostra;
+                analise.Lactose = lactose_amostra;
+                analise.PH = ph_amostra;
+                analise.ESD = esd_amostra;
+                analise.EST = est_amostra;
+                analise.Crioscopia = crioscopia_amostra;
+                analise.CCS = ccs_amostra;
+                analise.CTB = ctb_amostra;
+                analise.SolidosTotais = solidostotais_amostra;
+
+                contexto.Dados.Add(analise);
+                contexto.SaveChanges();
+            }
 
         }
 
@@ -352,5 +372,6 @@ namespace Phaola_02
 
 
         #endregion
+
     }
 }
