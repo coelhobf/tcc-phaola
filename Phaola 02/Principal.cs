@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Phaola_02
@@ -96,14 +97,14 @@ namespace Phaola_02
 
             if (ccs_amostra > ccs_padrao.max || ccs_amostra < ccs_padrao.min)
                 ccs = true;
-            
+
             if (ctb_amostra > ctb_padrao.max || ctb_amostra < ctb_padrao.min)
                 ctb = true;
 
             if (solidostotais_amostra > solidostotais_padrao.max || solidostotais_amostra < solidostotais_padrao.min)
                 solidos = true;
 
-            if(matGorda || densidade || acidez || lactose ||
+            if (matGorda || densidade || acidez || lactose ||
                 ph || esd || est || crioscopia || proteina || ccs || ctb || solidos)
             {
                 // exibe a mensagem de erro com cada padrão errado
@@ -146,10 +147,12 @@ namespace Phaola_02
                     this.Close();
                 }
             }
-            else
-            {
-                // salva os dados e exibe mensagem com sucesso
-            }
+
+            // Salva os dados no banco
+            var data = DateTime.Now;
+            string id = data.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+            
 
         }
 
