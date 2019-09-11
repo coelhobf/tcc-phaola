@@ -26,38 +26,6 @@ namespace Phaola_02.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=polinha18;persistsecurityinfo=True;databas" +
-            "e=analises")]
-        public string analisesConnectionString {
-            get {
-                return ((string)(this["analisesConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=polinha18;persistsecurityinfo=True;databas" +
-            "e=analises;allowuservariables=True")]
-        public string analisesConnectionString1 {
-            get {
-                return ((string)(this["analisesConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("user id=root;server=localhost;password=polinha18;database=analises")]
-        public string analisesConnectionString2 {
-            get {
-                return ((string)(this["analisesConnectionString2"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\bdanalises.md" +
             "f;Integrated Security=True;Connect Timeout=30")]
         public string bdanalisesConnectionString {

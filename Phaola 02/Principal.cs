@@ -152,27 +152,49 @@ namespace Phaola_02
             var data = DateTime.Now;
             string id = data.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            using (var contexto = new bdanalisesEntities())
-            {
-                var analise = new Dados();
+            //using (var contexto = new bdAnalisesEntities())
+            //{
+            //    var analise = new Dados();
 
-                analise.Id = id;
-                analise.Proteinas = proteinas_amostra;
-                analise.MatGorda = materiaGorda_amostra;
-                analise.Densidade = densidade_amostra;
-                analise.Acidez = acidez_amostra;
-                analise.Lactose = lactose_amostra;
-                analise.PH = ph_amostra;
-                analise.ESD = esd_amostra;
-                analise.EST = est_amostra;
-                analise.Crioscopia = crioscopia_amostra;
-                analise.CCS = ccs_amostra;
-                analise.CTB = ctb_amostra;
-                analise.SolidosTotais = solidostotais_amostra;
+            //    analise.Id = id;
+            //    analise.Data = DateTime.Now;
+            //    analise.Proteinas = proteinas_amostra;
+            //    analise.MatGorda = materiaGorda_amostra;
+            //    analise.Densidade = densidade_amostra;
+            //    analise.Acidez = acidez_amostra;
+            //    analise.Lactose = lactose_amostra;
+            //    analise.PH = ph_amostra;
+            //    analise.ESD = esd_amostra;
+            //    analise.EST = est_amostra;
+            //    analise.Crioscopia = crioscopia_amostra;
+            //    analise.CCS = ccs_amostra;
+            //    analise.CTB = ctb_amostra;
+            //    analise.SolidosTotais = solidostotais_amostra;
 
-                contexto.Dados.Add(analise);
-                contexto.SaveChanges();
-            }
+            //    contexto.Dados.Add(analise);
+
+            //    try
+            //    {
+            //        contexto.SaveChanges();
+            //    }
+            //    catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            //    {
+            //        Exception raise = dbEx;
+            //        foreach (var validationErrors in dbEx.EntityValidationErrors)
+            //        {
+            //            foreach (var validationError in validationErrors.ValidationErrors)
+            //            {
+            //                string message = string.Format("{0}:{1}",
+            //                    validationErrors.Entry.Entity.ToString(),
+            //                    validationError.ErrorMessage);
+            //                // raise a new exception nesting
+            //                // the current instance as InnerException
+            //                raise = new InvalidOperationException(message, raise);
+            //            }
+            //        }
+            //        throw raise;
+            //    }
+            //}
 
         }
 

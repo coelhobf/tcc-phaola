@@ -147,24 +147,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dados.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dados.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dados.cs">
-      <DependentUpon>Dados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dados.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dados.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Dados1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dados.tt</DependentUpon>
-    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -188,14 +170,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Dados.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Dados.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Dados.edmx.diagram">
-      <DependentUpon>Dados.edmx</DependentUpon>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -217,17 +194,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>bdanalises.mdf</DependentUpon>
     </Content>
-    <Content Include="Dados.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Dados.edmx</DependentUpon>
-      <LastGenOutput>Dados.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Dados.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Dados.edmx</DependentUpon>
-      <LastGenOutput>Dados1.cs</LastGenOutput>
-    </Content>
-    <Content Include="database\Dados.sql" />
+    <Content Include="database\Analise.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
