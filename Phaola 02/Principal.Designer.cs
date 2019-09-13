@@ -226,9 +226,9 @@
             // 
             this.btn_Analisar.Location = new System.Drawing.Point(353, 118);
             this.btn_Analisar.Name = "btn_Analisar";
-            this.btn_Analisar.Size = new System.Drawing.Size(90, 23);
+            this.btn_Analisar.Size = new System.Drawing.Size(90, 37);
             this.btn_Analisar.TabIndex = 28;
-            this.btn_Analisar.Text = "Analisar";
+            this.btn_Analisar.Text = "Analisar e Salvar";
             this.btn_Analisar.UseVisualStyleBackColor = true;
             this.btn_Analisar.Click += new System.EventHandler(this.btnAnalisar_Click);
             // 

@@ -9,6 +9,110 @@ namespace Phaola_02
 {
     public partial class Principal : Form
     {
+        private Analise Amostra {
+            get {
+                var analise = new Analise();
+
+                DateTime date;
+                double num;
+
+                if (!DateTime.TryParse(dataDateTimePicker1.Text, out date))
+                {
+                    analise.Data = DateTime.Now;
+                }
+                analise.Data = date;
+
+                if (!Double.TryParse(matGordaTextBox.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.MatGorda = num;
+
+                if (!Double.TryParse(pROTEINASTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.Proteinas = num;
+
+                if (!Double.TryParse(densidadeTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.Densidade = num;
+
+                if (!Double.TryParse(acidezTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.Acidez = num;
+
+                if (!Double.TryParse(lactoseTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.Lactose = num;
+
+                if (!Double.TryParse(pHTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.PH = num;
+
+                if (!Double.TryParse(eSDTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.ESD = num;
+
+                if (!Double.TryParse(eSTTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.EST = num;
+
+                if (!Double.TryParse(crioscopiaTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.Crioscopia = num;
+
+                if (!Double.TryParse(cCSTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.CCS = num;
+
+                if (!Double.TryParse(cTBTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.CTB = num;
+
+                if (!Double.TryParse(solidosTotaisTextBox1.Text, out num))
+                {
+                    num = -1;
+                }
+                analise.SolidosTotais = num;
+
+                return analise;
+            }
+            set
+            {
+                matGordaTextBox.Text = value.MatGorda.ToString();
+                pROTEINASTextBox1.Text = value.Proteinas.ToString();
+                densidadeTextBox1.Text = value.Densidade.ToString();
+                acidezTextBox1.Text = value.Acidez.ToString();
+                lactoseTextBox1.Text = value.Lactose.ToString();
+                pHTextBox1.Text = value.PH.ToString();
+                eSDTextBox1.Text = value.ESD.ToString();
+                eSTTextBox1.Text = value.EST.ToString();
+                crioscopiaTextBox1.Text = value.Crioscopia.ToString();
+                cCSTextBox1.Text = value.CCS.ToString();
+                cTBTextBox1.Text = value.CTB.ToString();
+                solidosTotaisTextBox1.Text = value.SolidosTotais.ToString();
+            }
+        }
+
         private double materiaGorda_padrao = 3.0;
         private (double min, double max) densidade_padrao = (1.028, 1.34);
         private (double min, double max) acidez_padrao = (0.14, 0.18);
@@ -302,7 +406,7 @@ namespace Phaola_02
             {
                 date = DateTime.Now;
             }
-
+        
             dataAnalise = date;
         }
 
@@ -329,6 +433,7 @@ namespace Phaola_02
                 else
                 {
                     MessageBox.Show("Não foi possivel encontrar este registro!");
+                    Amostra = new Analise();
                     return;
                 }
 

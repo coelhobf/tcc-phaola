@@ -10,19 +10,19 @@ namespace Phaola_02.Dados
     [Table("Analise")]
     public partial class Analise
     {
-        public string Id { get; set; }
-        public System.DateTime Data { get; set; }
-        public double MatGorda { get; set; }
-        public double Densidade { get; set; }
-        public double Acidez { get; set; }
-        public double Lactose { get; set; }
-        public double PH { get; set; }
-        public double ESD { get; set; }
-        public double EST { get; set; }
-        public double Crioscopia { get; set; }
-        public double Proteinas { get; set; }
-        public double CCS { get; set; }
-        public double CTB { get; set; }
-        public double SolidosTotais { get; set; }
+        public string Id { get; set; } = "";
+        public DateTime Data { get; set; } = DateTime.Now;
+        public double MatGorda { get; set; } = 0;
+        public double Densidade { get; set; } = 0;
+        public double Acidez { get; set; } = 0;
+        public double Lactose { get; set; } = 0;
+        public double PH { get; set; } = 0;
+        public double ESD { get; set; } = 0;
+        public double EST { get; set; } = 0;
+        public double Crioscopia { get; set; } = 0;
+        public double Proteinas { get; set; } = 0;
+        public double CCS { get; set; } = 0;
+        public double CTB { get; set; } = 0;
+        public double SolidosTotais { get; set; } = 0;
     }
 }
