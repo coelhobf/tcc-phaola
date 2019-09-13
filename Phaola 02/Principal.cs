@@ -324,7 +324,7 @@ namespace Phaola_02
         private double textChange(object sender)
         {
             var s = (TextBox)sender;
-            if (s.Text.Length > 0 && s.Text[0] == '-')
+            if (s.Text.Length == 1 && s.Text[0] == '-')
                 return -1;
 
             double num;
