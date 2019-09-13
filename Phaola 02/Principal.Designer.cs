@@ -57,6 +57,7 @@
             this.solidosTotaisTextBox1 = new System.Windows.Forms.TextBox();
             this.eSTTextBox1 = new System.Windows.Forms.TextBox();
             this.matGordaTextBox = new System.Windows.Forms.TextBox();
+            this.btnBuscaData = new System.Windows.Forms.Button();
             dataLabel1 = new System.Windows.Forms.Label();
             densidadeLabel1 = new System.Windows.Forms.Label();
             acidezLabel1 = new System.Windows.Forms.Label();
@@ -191,7 +192,7 @@
             // 
             // btn_GerarRelatorio
             // 
-            this.btn_GerarRelatorio.Location = new System.Drawing.Point(294, 88);
+            this.btn_GerarRelatorio.Location = new System.Drawing.Point(294, 112);
             this.btn_GerarRelatorio.Name = "btn_GerarRelatorio";
             this.btn_GerarRelatorio.Size = new System.Drawing.Size(90, 23);
             this.btn_GerarRelatorio.TabIndex = 27;
@@ -211,7 +212,7 @@
             // 
             // btn_Analisar
             // 
-            this.btn_Analisar.Location = new System.Drawing.Point(294, 116);
+            this.btn_Analisar.Location = new System.Drawing.Point(294, 140);
             this.btn_Analisar.Name = "btn_Analisar";
             this.btn_Analisar.Size = new System.Drawing.Size(90, 23);
             this.btn_Analisar.TabIndex = 28;
@@ -323,12 +324,23 @@
             this.matGordaTextBox.TabIndex = 4;
             this.matGordaTextBox.TextChanged += new System.EventHandler(this.matGordaTextBox_TextChanged);
             // 
+            // btnBuscaData
+            // 
+            this.btnBuscaData.Location = new System.Drawing.Point(294, 66);
+            this.btnBuscaData.Name = "btnBuscaData";
+            this.btnBuscaData.Size = new System.Drawing.Size(90, 43);
+            this.btnBuscaData.TabIndex = 30;
+            this.btnBuscaData.Text = "Buscar pela data";
+            this.btnBuscaData.UseVisualStyleBackColor = true;
+            this.btnBuscaData.Click += new System.EventHandler(this.btnBuscaData_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(400, 384);
+            this.Controls.Add(this.btnBuscaData);
             this.Controls.Add(matGordaLabel1);
             this.Controls.Add(this.matGordaTextBox);
             this.Controls.Add(eSTLabel1);
@@ -359,7 +371,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_GerarRelatorio);
             this.Name = "Principal";
-            this.Text = "Form1";
+            this.Text = "Tela Inicial";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -383,6 +395,7 @@
         private System.Windows.Forms.TextBox solidosTotaisTextBox1;
         private System.Windows.Forms.TextBox eSTTextBox1;
         private System.Windows.Forms.TextBox matGordaTextBox;
+        private System.Windows.Forms.Button btnBuscaData;
     }
 }
 

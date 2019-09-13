@@ -1,23 +1,25 @@
-﻿using Phaola_02.Dados;
+﻿using Microsoft.EntityFrameworkCore;
+using Phaola_02.Dados;
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Phaola_02
 {
     public partial class Principal : Form
     {
-        private (double min, double max) materiaGorda_padrao;
+        private double materiaGorda_padrao = 3.0;
         private (double min, double max) densidade_padrao = (1.028, 1.34);
         private (double min, double max) acidez_padrao = (0.14, 0.18);
         private (double min, double max) lactose_padrao = (45, 50);
         private (double min, double max) ph_padrao = (6.6, 6.8);
         private (double min, double max) esd_padrao = (8.4, 9);
         private (double min, double max) est_padrao = (11.5, 13);
-        private (double min, double max) crioscopia_padrao;
-        private (double min, double max) proteinas_padrao = (0, 0);
-        private (double min, double max) ccs_padrao;
-        private (double min, double max) ctb_padrao;
+        private (double min, double max) crioscopia_padrao = (-0.550, -0.530);
+        private double proteinas_padrao = 2.9;
+        private double ccs_padrao = 360000;
+        private double ctb_padrao = 100000;
         private (double min, double max) solidostotais_padrao = (7.9, 10);
 
         private double proteinas_amostra;
@@ -70,10 +72,10 @@ namespace Phaola_02
             bool ctb = false;
             bool solidos = false;
 
-            if (proteinas_amostra > proteinas_padrao.max || proteinas_amostra < proteinas_padrao.min)
+            if (proteinas_amostra < proteinas_padrao)
                 proteina = true;
 
-            if (materiaGorda_amostra > materiaGorda_padrao.max || materiaGorda_amostra < materiaGorda_padrao.min)
+            if (materiaGorda_amostra < materiaGorda_padrao)
                 matGorda = true;
 
             if (densidade_amostra > densidade_padrao.max || densidade_amostra < densidade_padrao.min)
@@ -97,10 +99,10 @@ namespace Phaola_02
             if (crioscopia_amostra > crioscopia_padrao.max || crioscopia_amostra < crioscopia_padrao.min)
                 crioscopia = true;
 
-            if (ccs_amostra > ccs_padrao.max || ccs_amostra < ccs_padrao.min)
+            if (ccs_amostra > ccs_padrao)
                 ccs = true;
 
-            if (ctb_amostra > ctb_padrao.max || ctb_amostra < ctb_padrao.min)
+            if (ctb_amostra > ctb_padrao)
                 ctb = true;
 
             if (solidostotais_amostra > solidostotais_padrao.max || solidostotais_amostra < solidostotais_padrao.min)
@@ -151,15 +153,19 @@ namespace Phaola_02
             }
 
             // Salva os dados no banco
-            var data = dataAnalise;
-            string id = data.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime date;
+            if (!DateTime.TryParse(dataDateTimePicker1.Text, out date))
+            {
+                date = DateTime.Now;
+            }
+            string id = date.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
 
             using (var contexto = new AnaliseContext())
             {
                 var analise = new Analise();
 
                 analise.Id = id;
-                analise.Data = dataAnalise;
+                analise.Data = DateTime.Now;
                 analise.Proteinas = proteinas_amostra;
                 analise.MatGorda = materiaGorda_amostra;
                 analise.Densidade = densidade_amostra;
@@ -173,7 +179,15 @@ namespace Phaola_02
                 analise.CTB = ctb_amostra;
                 analise.SolidosTotais = solidostotais_amostra;
 
-                contexto.Analises.Add(analise);
+                var entity = contexto.Analises.AsNoTracking().FirstOrDefault(a => a.Id == id);
+                if (entity == null)
+                {
+                    contexto.Analises.Add(analise);
+                }
+                else
+                {
+                    contexto.Analises.Update(analise);
+                }
                 contexto.SaveChanges();
                 MessageBox.Show("Dados Salvos com sucesso!");
 
@@ -203,196 +217,80 @@ namespace Phaola_02
         }
 
         #region textChanged
-        private void matGordaTextBox_TextChanged(object sender, EventArgs e)
+        private double textChange(object sender)
         {
             var s = (TextBox)sender;
+            if (s.Text.Length > 0 && s.Text[0] == '-')
+                return -1;
 
             double num;
-            if (Double.TryParse(s.Text, out num))
+            if (!Double.TryParse(s.Text, out num))
             {
-                materiaGorda_amostra = num;
-            }
-            else
-            {
-                materiaGorda_amostra = -1;
+                num = -1;
                 s.Text = "";
             }
+
+            return num;
+        }
+
+        private void matGordaTextBox_TextChanged(object sender, EventArgs e)
+        {
+            materiaGorda_amostra = textChange(sender);
         }
 
         private void densidadeTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                densidade_amostra = num;
-            }
-            else
-            {
-                densidade_amostra = -1;
-                s.Text = "";
-            }
+            densidade_amostra = textChange(sender);
         }
 
         private void acidezTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                acidez_amostra = num;
-            }
-            else
-            {
-                acidez_amostra = -1;
-                s.Text = "";
-            }
+            acidez_amostra = textChange(sender);
         }
 
         private void lactoseTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                lactose_amostra = num;
-            }
-            else
-            {
-                lactose_amostra = -1;
-                s.Text = "";
-            }
+            lactose_amostra = textChange(sender);
         }
 
         private void pHTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                ph_amostra = num;
-            }
-            else
-            {
-                ph_amostra = -1;
-                s.Text = "";
-            }
+            ph_amostra = textChange(sender);
         }
 
         private void eSDTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                esd_amostra = num;
-            }
-            else
-            {
-                esd_amostra = -1;
-                s.Text = "";
-            }
+            esd_amostra = textChange(sender);
         }
 
         private void eSTTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                est_amostra = num;
-            }
-            else
-            {
-                est_amostra = -1;
-                s.Text = "";
-            }
+            est_amostra = textChange(sender);
         }
 
         private void crioscopiaTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                crioscopia_amostra = num;
-            }
-            else
-            {
-                crioscopia_amostra = -1;
-                s.Text = "";
-            }
+            crioscopia_amostra = textChange(sender);
         }
 
         private void proteinasTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                proteinas_amostra = num;
-            }
-            else
-            {
-                proteinas_amostra = -1;
-                s.Text = "";
-            }
+            proteinas_amostra = textChange(sender);
         }
 
         private void cCSTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                ccs_amostra = num;
-            }
-            else
-            {
-                ccs_amostra = -1;
-                s.Text = "";
-            }
+            ccs_amostra = textChange(sender);
         }
 
         private void cTBTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                ctb_amostra = num;
-            }
-            else
-            {
-                ctb_amostra = -1;
-                s.Text = "";
-            }
+            ctb_amostra = textChange(sender);
         }
 
         private void solidosTotaisTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var s = (TextBox)sender;
-
-            double num;
-            if (Double.TryParse(s.Text, out num))
-            {
-                solidostotais_amostra = num;
-            }
-            else
-            {
-                solidostotais_amostra = -1;
-                s.Text = "";
-            }
+            solidostotais_amostra = textChange(sender);
         }
 
         private void dataDateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -410,5 +308,45 @@ namespace Phaola_02
 
         #endregion
 
+        private void btnBuscaData_Click(object sender, EventArgs e)
+        {
+            DateTime date;
+            if (!DateTime.TryParse(dataDateTimePicker1.Text, out date))
+            {
+                date = DateTime.Now;
+            }
+            string id = date.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+            using (var contexto = new AnaliseContext())
+            {
+                var analises = contexto.Analises.Where(a => a.Id == id).ToArray();
+
+                Analise analise;
+                if(analises.Length > 0)
+                {
+                    analise = analises[0];
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel encontrar este registro!");
+                    return;
+                }
+
+                matGordaTextBox.Text = analise.MatGorda.ToString();
+                pROTEINASTextBox1.Text = analise.Proteinas.ToString();
+                densidadeTextBox1.Text = analise.Densidade.ToString();
+                acidezTextBox1.Text = analise.Acidez.ToString();
+                lactoseTextBox1.Text = analise.Lactose.ToString();
+                pHTextBox1.Text = analise.PH.ToString();
+                eSDTextBox1.Text = analise.ESD.ToString();
+                eSTTextBox1.Text = analise.EST.ToString();
+                crioscopiaTextBox1.Text = analise.Crioscopia.ToString();
+                cCSTextBox1.Text = analise.CCS.ToString();
+                cTBTextBox1.Text = analise.CTB.ToString();
+                solidosTotaisTextBox1.Text = analise.SolidosTotais.ToString();
+
+
+            }
+        }
     }
 }
