@@ -152,7 +152,8 @@ namespace Phaola_02
 
         private void btnGerarRelatorio_Click(object sender, EventArgs e)
         {
-
+            var relForm = new ReportForm();
+            relForm.Show();
         }
 
         private void btnSair_Click(object sender, EventArgs e)

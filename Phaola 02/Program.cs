@@ -14,6 +14,7 @@ namespace Phaola_02
         [STAThread]
         static void Main()
         {
+            //SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Principal());

@@ -16,5 +16,10 @@ namespace Phaola_02
         {
             InitializeComponent();
         }
+
+        private void ReportForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
