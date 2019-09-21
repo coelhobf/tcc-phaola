@@ -152,8 +152,29 @@ namespace Phaola_02
 
         private void btnGerarRelatorio_Click(object sender, EventArgs e)
         {
-            var relForm = new ReportForm();
-            relForm.Show();
+            DateTime date;
+            if (!DateTime.TryParse(dataDateTimePicker1.Text, out date))
+            {
+                date = DateTime.Now;
+            }
+            string id = date.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+            using (var contexto = new AnaliseContext())
+            {
+                Analise analise;
+
+                var entity = contexto.Analises.AsNoTracking().FirstOrDefault(a => a.Id == id);
+                if (entity == null)
+                {
+                    MessageBox.Show("Erro ao recuperar dados para esta data!");
+                    return;
+                }
+
+                analise = entity;
+
+                var relForm = new ReportForm(analise);
+                relForm.Show();
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)

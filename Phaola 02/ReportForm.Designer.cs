@@ -28,18 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            // mod bruno
+            var reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            // end mod bruno
+
+            this.components = new System.ComponentModel.Container();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.Analises_BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.Analises_BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+
+            // mod bruno
+            reportDataSource1.Name = "Orders";
+            reportDataSource1.Value = this.Analises_BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            // end mod bruno
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportPath = "Relatorio.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Phaola_02.Relatorio.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "ReportViewer";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(796, 444);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // bindingSource1
+            // 
+            this.Analises_BindingSource.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
             // ReportForm
             // 
@@ -50,6 +67,7 @@
             this.Name = "ReportForm";
             this.Text = "Relatório de Conformidade";
             this.Load += new System.EventHandler(this.ReportForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Analises_BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,5 +75,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource Analises_BindingSource;
     }
 }
