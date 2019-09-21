@@ -31,20 +31,20 @@ namespace Phaola_02
             this.Analises_BindingSource.DataSource = list;
             this.reportViewer1.RefreshReport();
 
-            Warning[] warnings;
-            string[] streamids;
-            string mimeType;
-            string encoding;
-            string filenameExtension;
+            //Warning[] warnings;
+            //string[] streamids;
+            //string mimeType;
+            //string encoding;
+            //string filenameExtension;
 
-            byte[] bytes = reportViewer1.LocalReport.Render(
-                "PDF", null, out mimeType, out encoding, out filenameExtension,
-                out streamids, out warnings);
+            //byte[] bytes = reportViewer1.LocalReport.Render(
+            //    "PDF", null, out mimeType, out encoding, out filenameExtension,
+            //    out streamids, out warnings);
 
-            using (FileStream fs = new FileStream("Analise-" + this.analise.Id + ".pdf", FileMode.Create))
-            {
-                fs.Write(bytes, 0, bytes.Length);
-            }
+            //using (FileStream fs = new FileStream("Analise-" + this.analise.Id + ".pdf", FileMode.Create))
+            //{
+            //    fs.Write(bytes, 0, bytes.Length);
+            //}
 
         }
 

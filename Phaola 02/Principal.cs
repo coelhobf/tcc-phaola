@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Phaola_02.Dados;
 using System;
+using System.Data.Entity.Validation;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -321,7 +322,7 @@ namespace Phaola_02
                 {
                     //MessageBox.Show("Salvou ok");
                 }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                catch (DbEntityValidationException dbEx)
                 {
                     Exception raise = dbEx;
                     foreach (var validationErrors in dbEx.EntityValidationErrors)
