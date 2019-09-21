@@ -3,6 +3,7 @@ using Phaola_02.Dados;
 using System;
 using System.Data.Entity.Validation;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -412,7 +413,7 @@ namespace Phaola_02
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("manual_de_metodos.pdf");
+            System.Diagnostics.Process.Start(Path.GetFullPath("manual_de_metodos.pdf"));
         }
     }
 }
