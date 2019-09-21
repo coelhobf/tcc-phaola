@@ -70,6 +70,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             dataLabel1 = new System.Windows.Forms.Label();
             densidadeLabel1 = new System.Windows.Forms.Label();
             acidezLabel1 = new System.Windows.Forms.Label();
@@ -423,7 +424,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(191, 230);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 13);
+            this.label9.Size = new System.Drawing.Size(148, 13);
             this.label9.TabIndex = 42;
             this.label9.Text = "Min. -0,550 – Máx. -0,530 (°H)";
             // 
@@ -454,12 +455,24 @@
             this.label12.TabIndex = 39;
             this.label12.Text = "Min. 6,6 – Máx. 6,8";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(181, 368);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(101, 13);
+            this.linkLabel1.TabIndex = 43;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Manual de Métodos";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(451, 364);
+            this.ClientSize = new System.Drawing.Size(451, 394);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
@@ -540,6 +553,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

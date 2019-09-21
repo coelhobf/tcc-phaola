@@ -245,6 +245,9 @@
     <None Include="bdanalisesDataSet.xss">
       <DependentUpon>bdanalisesDataSet.xsd</DependentUpon>
     </None>
+    <None Include="manual_de_metodos.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

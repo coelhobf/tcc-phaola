@@ -409,5 +409,10 @@ namespace Phaola_02
 
             }
         }
+
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("manual_de_metodos.pdf");
+        }
     }
 }
