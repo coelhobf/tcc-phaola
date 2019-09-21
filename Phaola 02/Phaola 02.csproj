@@ -190,6 +190,7 @@
     </Compile>
     <Compile Include="Dados\Analise.cs" />
     <Compile Include="Dados\AnaliseContext.cs" />
+    <Compile Include="Dados\Conformidade.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

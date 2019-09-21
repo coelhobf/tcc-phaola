@@ -27,25 +27,27 @@ namespace Phaola_02
         {
             var list = new List<Analise>();
             list.Add(this.analise);
-
             this.Analises_BindingSource.DataSource = list;
+
+            var inconf = (new Conformidade(this.analise)).VerificaConformidade().inconforme;
+            var rParems = new ReportParameter[]
+            {
+                new ReportParameter("cf_mat", (!inconf.matGorda).ToString()),
+                new ReportParameter("cf_densi", (!inconf.densidade).ToString()),
+                new ReportParameter("cf_acidez", (!inconf.acidez).ToString()),
+                new ReportParameter("cf_lactose", (!inconf.lactose).ToString()),
+                new ReportParameter("cf_ph", (!inconf.ph).ToString()),
+                new ReportParameter("cf_esd", (!inconf.esd).ToString()),
+                new ReportParameter("cf_est", (!inconf.est).ToString()),
+                new ReportParameter("cf_crios", (!inconf.crioscopia).ToString()),
+                new ReportParameter("cf_prot", (!inconf.proteina).ToString()),
+                new ReportParameter("cf_ccs", (!inconf.ccs).ToString()),
+                new ReportParameter("cf_ctb", (!inconf.ctb).ToString()),
+                new ReportParameter("cf_solid", (!inconf.solidos).ToString())
+            };
+            reportViewer1.LocalReport.SetParameters(rParems);
+
             this.reportViewer1.RefreshReport();
-
-            //Warning[] warnings;
-            //string[] streamids;
-            //string mimeType;
-            //string encoding;
-            //string filenameExtension;
-
-            //byte[] bytes = reportViewer1.LocalReport.Render(
-            //    "PDF", null, out mimeType, out encoding, out filenameExtension,
-            //    out streamids, out warnings);
-
-            //using (FileStream fs = new FileStream("Analise-" + this.analise.Id + ".pdf", FileMode.Create))
-            //{
-            //    fs.Write(bytes, 0, bytes.Length);
-            //}
-
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)

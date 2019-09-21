@@ -21,6 +21,8 @@ namespace Phaola_02
                 {
                     analise.Data = DateTime.Now;
                 }
+                analise.Id = date.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+
                 analise.Data = date;
 
                 if (!Double.TryParse(matGordaTextBox.Text, out num))
@@ -114,18 +116,7 @@ namespace Phaola_02
             }
         }
 
-        private double materiaGorda_padrao = 3.0;
-        private (double min, double max) densidade_padrao = (1.028, 1.34);
-        private (double min, double max) acidez_padrao = (0.14, 0.18);
-        private (double min, double max) lactose_padrao = (45, 50);
-        private (double min, double max) ph_padrao = (6.6, 6.8);
-        private (double min, double max) esd_padrao = (8.4, 9);
-        private (double min, double max) est_padrao = (11.5, 13);
-        private (double min, double max) crioscopia_padrao = (-0.550, -0.530);
-        private double proteinas_padrao = 2.9;
-        private double ccs_padrao = 360000;
-        private double ctb_padrao = 100000;
-        private (double min, double max) solidostotais_padrao = (7.9, 10);
+        
 
         private double proteinas_amostra;
         private double materiaGorda_amostra;
@@ -186,93 +177,21 @@ namespace Phaola_02
 
         private void btnAnalisar_Click(object sender, EventArgs e)
         {
-            bool proteina = false;
-            bool matGorda = false;
-            bool densidade = false;
-            bool acidez = false;
-            bool lactose = false;
-            bool ph = false;
-            bool esd = false;
-            bool est = false;
-            bool crioscopia = false;
-            bool ccs = false;
-            bool ctb = false;
-            bool solidos = false;
+            var cf = new Conformidade(Amostra);
+            var conformidade = cf.VerificaConformidade();
 
-            if (proteinas_amostra < proteinas_padrao)
-                proteina = true;
-
-            if (materiaGorda_amostra < materiaGorda_padrao)
-                matGorda = true;
-
-            if (densidade_amostra > densidade_padrao.max || densidade_amostra < densidade_padrao.min)
-                densidade = true;
-
-            if (acidez_amostra > acidez_padrao.max || acidez_amostra < acidez_padrao.min)
-                acidez = true;
-
-            if (lactose_amostra > lactose_padrao.max || lactose_amostra < lactose_padrao.min)
-                lactose = true;
-
-            if (ph_amostra > ph_padrao.max || ph_amostra < ph_padrao.min)
-                ph = true;
-
-            if (esd_amostra > esd_padrao.max || esd_amostra < esd_padrao.min)
-                esd = true;
-
-            if (est_amostra > est_padrao.max || est_amostra < est_padrao.min)
-                est = true;
-
-            if (crioscopia_amostra > crioscopia_padrao.max || crioscopia_amostra < crioscopia_padrao.min)
-                crioscopia = true;
-
-            if (ccs_amostra > ccs_padrao)
-                ccs = true;
-
-            if (ctb_amostra > ctb_padrao)
-                ctb = true;
-
-            if (solidostotais_amostra > solidostotais_padrao.max || solidostotais_amostra < solidostotais_padrao.min)
-                solidos = true;
-
-            if (matGorda || densidade || acidez || lactose ||
-                ph || esd || est || crioscopia || proteina || ccs || ctb || solidos)
+            if(conformidade.inconforme.teste())
             {
                 // exibe a mensagem de erro com cada padrão errado
                 string caption = "Erros detectados nos dados";
-
-                string message = "Os seguintes campos estão dentro dos padrões incorretos:\n\n";
-                if (matGorda)
-                    message += "Matéria Gorda\n";
-                if (densidade)
-                    message += "Densidade\n";
-                if (acidez)
-                    message += "Acidez\n";
-                if (lactose)
-                    message += "Lactose\n";
-                if (ph)
-                    message += "PH\n";
-                if (esd)
-                    message += "ESD\n";
-                if (est)
-                    message += "EST\n";
-                if (crioscopia)
-                    message += "Crioscopia\n";
-                if (proteina)
-                    message += "Proteinas\n";
-                if (ccs)
-                    message += "CCS\n";
-                if (ctb)
-                    message += "CTB\n";
-                if (solidos)
-                    message += "Solidos totais\n";
+                string message = conformidade.message;
 
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
 
                 // Displays the MessageBox.
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     // Closes the parent form.
                     this.Close();
@@ -289,22 +208,24 @@ namespace Phaola_02
 
             using (var contexto = new AnaliseContext())
             {
-                var analise = new Analise();
+                //var analise = new Analise();
 
-                analise.Id = id;
-                analise.Data = DateTime.Now;
-                analise.Proteinas = proteinas_amostra;
-                analise.MatGorda = materiaGorda_amostra;
-                analise.Densidade = densidade_amostra;
-                analise.Acidez = acidez_amostra;
-                analise.Lactose = lactose_amostra;
-                analise.PH = ph_amostra;
-                analise.ESD = esd_amostra;
-                analise.EST = est_amostra;
-                analise.Crioscopia = crioscopia_amostra;
-                analise.CCS = ccs_amostra;
-                analise.CTB = ctb_amostra;
-                analise.SolidosTotais = solidostotais_amostra;
+                //analise.Id = id;
+                //analise.Data = DateTime.Now;
+                //analise.Proteinas = proteinas_amostra;
+                //analise.MatGorda = materiaGorda_amostra;
+                //analise.Densidade = densidade_amostra;
+                //analise.Acidez = acidez_amostra;
+                //analise.Lactose = lactose_amostra;
+                //analise.PH = ph_amostra;
+                //analise.ESD = esd_amostra;
+                //analise.EST = est_amostra;
+                //analise.Crioscopia = crioscopia_amostra;
+                //analise.CCS = ccs_amostra;
+                //analise.CTB = ctb_amostra;
+                //analise.SolidosTotais = solidostotais_amostra;
+
+                var analise = Amostra;
 
                 var entity = contexto.Analises.AsNoTracking().FirstOrDefault(a => a.Id == id);
                 if (entity == null)
@@ -315,8 +236,16 @@ namespace Phaola_02
                 {
                     contexto.Analises.Update(analise);
                 }
-                contexto.SaveChanges();
-                MessageBox.Show("Dados Salvos com sucesso!");
+
+                try
+                {
+                    contexto.SaveChanges();
+                    MessageBox.Show("Dados Salvos com sucesso!");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Erro ao salvar os dados.");
+                }
 
                 try
                 {
@@ -460,18 +389,19 @@ namespace Phaola_02
                     return;
                 }
 
-                matGordaTextBox.Text = analise.MatGorda.ToString();
-                pROTEINASTextBox1.Text = analise.Proteinas.ToString();
-                densidadeTextBox1.Text = analise.Densidade.ToString();
-                acidezTextBox1.Text = analise.Acidez.ToString();
-                lactoseTextBox1.Text = analise.Lactose.ToString();
-                pHTextBox1.Text = analise.PH.ToString();
-                eSDTextBox1.Text = analise.ESD.ToString();
-                eSTTextBox1.Text = analise.EST.ToString();
-                crioscopiaTextBox1.Text = analise.Crioscopia.ToString();
-                cCSTextBox1.Text = analise.CCS.ToString();
-                cTBTextBox1.Text = analise.CTB.ToString();
-                solidosTotaisTextBox1.Text = analise.SolidosTotais.ToString();
+                //matGordaTextBox.Text = analise.MatGorda.ToString();
+                //pROTEINASTextBox1.Text = analise.Proteinas.ToString();
+                //densidadeTextBox1.Text = analise.Densidade.ToString();
+                //acidezTextBox1.Text = analise.Acidez.ToString();
+                //lactoseTextBox1.Text = analise.Lactose.ToString();
+                //pHTextBox1.Text = analise.PH.ToString();
+                //eSDTextBox1.Text = analise.ESD.ToString();
+                //eSTTextBox1.Text = analise.EST.ToString();
+                //crioscopiaTextBox1.Text = analise.Crioscopia.ToString();
+                //cCSTextBox1.Text = analise.CCS.ToString();
+                //cTBTextBox1.Text = analise.CTB.ToString();
+                //solidosTotaisTextBox1.Text = analise.SolidosTotais.ToString();
+                Amostra = analise;
 
 
             }
