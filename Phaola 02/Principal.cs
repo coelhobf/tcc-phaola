@@ -196,6 +196,9 @@ namespace Phaola_02
                     // Closes the parent form.
                     this.Close();
                 }
+
+                var mncf = new MotivosNaoConformidade();
+                mncf.Show();
             }
 
             // Salva os dados no banco
