@@ -425,7 +425,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(142, 13);
             this.label9.TabIndex = 42;
-            this.label9.Text = "Min. -0,530 – Máx. -0,550 °H";
+            this.label9.Text = "Min. -0,550 – Máx. -0,530 (°H)";
             // 
             // label10
             // 
