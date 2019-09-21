@@ -1990,7 +1990,7 @@
             </TablixRowHierarchy>
             <DataSetName>Analises</DataSetName>
             <Top>3.50062cm</Top>
-            <Left>1.87537cm</Left>
+            <Left>2.19287cm</Left>
             <Height>7.77354cm</Height>
             <Width>17.55447cm</Width>
             <ZIndex>2</ZIndex>
@@ -2000,8 +2000,62 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>_______________________________________</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Assinatura do Responsável</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox7</rd:DefaultName>
+            <Top>12.04667cm</Top>
+            <Left>5.07682cm</Left>
+            <Height>1.57896cm</Height>
+            <Width>11.68104cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>12.555cm</Height>
+        <Height>14.51292cm</Height>
         <Style />
       </Body>
       <Width>21.24162cm</Width>
